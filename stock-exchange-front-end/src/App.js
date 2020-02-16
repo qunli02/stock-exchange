@@ -20,7 +20,7 @@ class App extends React.Component {
       })
       .then(r => r.json())
       .then(data => {
-        this.props.handleuser(data)
+        this.props.handleuser(data.user)
       })
     }
   }

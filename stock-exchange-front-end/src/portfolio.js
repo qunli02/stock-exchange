@@ -9,27 +9,33 @@ class Portfolio extends React.Component {
 
 
   render(){
+
     if(this.props.user) {
       return (
         <div className="portfolio">
-          <h1>porfolio</h1>
-            Cash:${this.props.user.money}
-            <form onSubmit={(e)=>{
-                e.preventDefault();
-                this.props.handlebuy(e.target[0].value, e.target[1].value)
-            }}>
-              <label>
-                Ticker:
-                <input type="text" name="ticker"/>
-              </label>
-              <br/>
-              <label>
-                QTY:
-                <input type="number" min ="0" step="1" name="qty"/>
-              </label>
-              <br/>
-              <input type="submit" value="Buy" />
-            </form>
+          <div>
+            <h1>porfolio</h1>
+              Cash:${this.props.user.money}
+              <form onSubmit={(e)=>{
+                  e.preventDefault();
+                  this.props.handlebuy(e.target[0].value, e.target[1].value)
+              }}>
+                <label>
+                  Ticker:
+                  <input type="text" name="ticker"/>
+                </label>
+                <br/>
+                <label>
+                  QTY:
+                  <input type="number" min ="1" step="1" name="qty" required minlength="1"/>
+                </label>
+                <br/>
+                <input type="submit" value="Buy" />
+              </form>
+          </div>
+          <div>
+
+          </div>
         </div>
       );
     }
@@ -55,8 +61,9 @@ function mdp(dispatch){
         return response.json();
       })
       .then((data) => {
-        let value = qty * parseFloat(Object.values(data["Time Series (5min)"])[0]["4. close"])
-        dispatch({type: "BUY", data: {ticker, value}})
+        debugger
+        let value = parseFloat(Object.values(data["Time Series (5min)"])[0]["4. close"])
+        dispatch({type: "BUY", data: {ticker, value, qty}})
       });
     }
   }

@@ -4,7 +4,6 @@ class CreateUserstocks < ActiveRecord::Migration[5.2]
       t.belongs_to :stock
       t.belongs_to :user
       t.integer :amount
-      t.integer :price
       t.timestamps
     end
   end
