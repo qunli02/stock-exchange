@@ -25,7 +25,7 @@ class Portfolio extends React.Component {
               <br/>
               <label>
                 QTY:
-                <input type="text" name="qty"/>
+                <input type="number" min ="0" step="1" name="qty"/>
               </label>
               <br/>
               <input type="submit" value="Buy" />
@@ -49,8 +49,15 @@ function msp(state){
 
 function mdp(dispatch){
   return{
-    handlebuy: (ticker,cost) => {
-    dispatch({type: "BUY", data: {ticker, cost}})
+    handlebuy: (ticker,qty) => {
+      fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${ticker}&interval=5min&apikey=PGCTGCH5CPIW97F9`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let value = qty * parseFloat(Object.values(data["Time Series (5min)"])[0]["4. close"])
+        dispatch({type: "BUY", data: {ticker, value}})
+      });
     }
   }
 }

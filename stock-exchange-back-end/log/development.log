@@ -3084,3 +3084,255 @@ Processing by Api::V1::UsersController#profile as */*
 Completed 202 Accepted in 64ms (Views: 7.2ms | ActiveRecord: 53.9ms)
 
 
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:01:03 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.6ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (14.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.52ms)
+Completed 202 Accepted in 25ms (Views: 5.3ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:01:27 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.6ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.4ms)
+Completed 202 Accepted in 9ms (Views: 4.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:02:00 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.4ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.21ms)
+Completed 202 Accepted in 9ms (Views: 4.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:12:10 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.6ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.13ms)
+Completed 202 Accepted in 9ms (Views: 4.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:12:34 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.3ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.86ms)
+Completed 202 Accepted in 17ms (Views: 4.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:13:42 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (3.3ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (2.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.56ms)
+Completed 202 Accepted in 15ms (Views: 5.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:15:26 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.6ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (1.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.33ms)
+Completed 202 Accepted in 12ms (Views: 6.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:17:15 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (102.8ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (107.79ms)
+Completed 202 Accepted in 118ms (Views: 5.1ms | ActiveRecord: 109.6ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:20:41 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.5ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.63ms)
+Completed 202 Accepted in 12ms (Views: 7.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:23:52 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.3ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.16ms)
+Completed 202 Accepted in 36ms (Views: 17.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:27:49 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (90.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.3ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.93ms)
+Completed 202 Accepted in 122ms (Views: 19.3ms | ActiveRecord: 91.0ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:28:22 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (75.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.2ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.14ms)
+Completed 202 Accepted in 89ms (Views: 9.7ms | ActiveRecord: 75.6ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:29:59 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (71.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (2.8ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (4.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.2ms)
+Completed 202 Accepted in 98ms (Views: 8.3ms | ActiveRecord: 78.8ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:30:16 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (88.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (8.0ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.3ms)
+Completed 202 Accepted in 118ms (Views: 13.7ms | ActiveRecord: 97.0ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:30:25 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.3ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.36ms)
+Completed 202 Accepted in 20ms (Views: 13.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:31:12 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (1.8ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.64ms)
+Completed 202 Accepted in 20ms (Views: 11.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:34:38 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.3ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.35ms)
+Completed 202 Accepted in 14ms (Views: 9.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-02-16 00:34:47 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+[active_model_serializers]   [1m[36mUserstock Load (0.4ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.94ms)
+Completed 202 Accepted in 9ms (Views: 4.6ms | ActiveRecord: 1.2ms)
+
+
