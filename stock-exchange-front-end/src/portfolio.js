@@ -9,7 +9,7 @@ class Portfolio extends React.Component {
 
 
   render(){
-    if(this.props.user){
+    if(this.props.user) {
       return (
         <div className="portfolio">
           <h1>porfolio</h1>
