@@ -7,8 +7,12 @@ function reducer(prevState = defaultState, action){
     case "USER":
       return {...prevState, user: action.data.user}
       case "BUY":
-        debugger
-        return {...prevState}
+        if(prevState.user.money - action.data.cost > 0){
+          let leftOverMoney = prevState.user.money - action.data.cost
+          return {...prevState, user: {...prevState.user, money:leftOverMoney}}
+        }else{
+          alert("not enought money")
+        }
     default:
       return prevState
   }

@@ -16,7 +16,7 @@ class Portfolio extends React.Component {
             Cash:${this.props.user.money}
             <form onSubmit={(e)=>{
                 e.preventDefault();
-                this.props.handlebuy(action.data.target[0].value, action.data.target[1].value)
+                this.props.handlebuy(e.target[0].value, e.target[1].value)
             }}>
               <label>
                 Ticker:
@@ -50,7 +50,7 @@ function msp(state){
 function mdp(dispatch){
   return{
     handlebuy: (ticker,cost) => {
-    dispatch({type: "BUY", data: ticker, cost})
+    dispatch({type: "BUY", data: {ticker, cost}})
     }
   }
 }
