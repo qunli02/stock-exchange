@@ -19,6 +19,7 @@ class Api::V1::UserstocksController < ApplicationController
   end
 
   def update
+    byebug
     @userstock.update(userstock_params)
     if @userstock.save
       render json: @userstock, status: :accepted
