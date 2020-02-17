@@ -1,2 +1,4 @@
 stock-exchange-front-end/node_modules
 stock-exchange-front-end/src/keys.js
+stock-exchange-back-end/tmp/*
+/public
