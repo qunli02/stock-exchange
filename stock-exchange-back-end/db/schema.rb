@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2020_02_13_180750) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
-    t.integer "money"
+    t.string "password_digest"
+    t.float "money"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_180750) do
     t.bigint "stock_id"
     t.bigint "user_id"
     t.integer "amount"
-    t.integer "price"
+    t.float "money"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["stock_id"], name: "index_userstocks_on_stock_id"
