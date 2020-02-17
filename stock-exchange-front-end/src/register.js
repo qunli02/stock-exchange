@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux"
+import "./register.css"
 
 
 class Register extends React.Component {
@@ -49,22 +50,22 @@ class Register extends React.Component {
               e.preventDefault();
               this.handleregister(e);
             }}>
-            <h1>Register</h1>
-            <label>
+            <h1 className="center">Register</h1>
+            <label className="center" >
               Name:
-              <input type="text" name="name"/>
-            </label>
+              <input type="text" name="name" required/>
+            </label >
             <br/>
-            <label>
+            <label className="center" >
               E-mail:
-              <input type="text" name="email"/>
+              <input type="email" name="email" required/>
             </label>
             <br/>
-            <label>
+            <label className="center" >
               password:
-              <input type="text" name="password"/>
+              <input type="password" name="password" required/>
             </label>
-            <input type="submit" value="Register" />
+            <input className="center" type="submit" value="Register" />
           </form>
         </div>
       );

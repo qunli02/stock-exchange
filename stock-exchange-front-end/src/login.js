@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux"
+import "./login.css"
 
 
 class Login extends React.Component {
@@ -31,28 +32,30 @@ class Login extends React.Component {
   }
 
   render(){
-    if (this.props.user){
+    const { user, location } = this.props
+    if (user){
       return(
         <Redirect to="/portfolio" />
       )
-    }else{
+    } else {
       return (
-        <div className= "login">
+        <div className="login">
           <form onSubmit={(e)=>{
               e.preventDefault();
               this.handlelogin(e)
             }}>
-            <h1>Sign in</h1>
-            <label>
+            <h1 className="center" >Sign in</h1>
+            <label className="center">
               E-mail:
               <input type="text" name="email"/>
             </label>
             <br/>
-            <label>
+            <label className="center" >
               password:
               <input type="text" name="password"/>
             </label>
-            <input type="submit" value="Sign in" />
+            <br/>
+            <input className="center" type="submit" value="Sign in" />
           </form>
         </div>
       );
