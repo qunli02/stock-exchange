@@ -10,16 +10,16 @@ class Api::V1::UserstocksController < ApplicationController
     stock_ticker = userstock_params["ticker"]
     amount = userstock_params["qty"]
     money = userstock_params["money"]
+    stock_price = userstock_params["stock_price"]
     @stock = Stock.find_by(name: stock_ticker)
     if !@stock
       @stock = Stock.create(name: stock_ticker)
     end
-    Userstock.create(user_id:cur_user.id, stock_id: @stock.id, amount: amount)
+    Userstock.create(user_id:cur_user.id, stock_id: @stock.id, amount: amount, money: stock_price )
     cur_user.update(money: money)
   end
 
   def update
-    byebug
     @userstock.update(userstock_params)
     if @userstock.save
       render json: @userstock, status: :accepted
@@ -31,7 +31,7 @@ class Api::V1::UserstocksController < ApplicationController
   private
 
   def userstock_params
-    params.permit(:id, :name, :money, :ticker, :qty)
+    params.permit(:id, :name, :money, :ticker, :qty, :stock_price)
   end
 
   def find_userstock

@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_180750) do
     t.bigint "stock_id"
     t.bigint "user_id"
     t.integer "amount"
+    t.float "money"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["stock_id"], name: "index_userstocks_on_stock_id"
