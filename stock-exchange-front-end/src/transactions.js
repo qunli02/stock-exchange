@@ -13,6 +13,7 @@ class Transactions extends React.Component {
       )
     }
 
+    console.log(this.props.user);
     return (
       <div className="transactions">
         <h1>transactions</h1>
@@ -21,7 +22,7 @@ class Transactions extends React.Component {
               let name = this.props.user.stocks.find(stock => stock.id == userstock.stock_id).name
               return (
                 <div key={userstock.id}>
-                  <p>BUY {name.toUpperCase()} --- {userstock.amount} share(s) @ ${userstock.money}</p>
+                  <p>BUY {name} --- {userstock.amount} share(s) @ ${userstock.money}</p>
                 </div>
               )
             })

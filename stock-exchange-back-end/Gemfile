@@ -32,6 +32,7 @@ gem 'active_model_serializers'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'foreman', '~> 0.82.0'
 end
 
 group :development do
@@ -47,3 +48,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "jwt", "~> 2.1"
 gem "faker", "~> 1.9"
+gem "thor", "~> 0.19.1"

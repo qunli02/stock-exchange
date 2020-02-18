@@ -9,32 +9,7 @@ function reducer(prevState = defaultState, action){
       return {...prevState, user: action.data}
     case "BUY":
       let leftOverMoney = Math.round((prevState.user.money - (action.data.price * action.data.qty)) * 100)/100
-      // if(leftOverMoney > 0){
-        // fetch('http://localhost:4000/api/v1/userstocks', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //     Accept: 'application/json',
-        //     "Authorization": localStorage.token
-        //   },
-        //   body: JSON.stringify({
-        //     ticker: action.data.ticker,
-        //     money: leftOverMoney,
-        //     qty: action.data.qty
-        //   })
-        // })
-      //   let newState = {...prevState}
-      //   let tickerSymbol = action.data.ticker
-      //   debugger
-      //   action.data.ticker = null
-      //   newState.user.stocks.push({name: tickerSymbol})
-      //   if (!newState.tickerPrice[tickerSymbol]){
-      //     newState.tickerPrice[tickerSymbol] = action.data
-      //   }else{
-      //     newState.tickerPrice[tickerSymbol].qty += parseInt(action.data.qty)
-      //   }
-      //   debugger
-      //   return newState
+
       if(leftOverMoney > 0){
         let long = prevState.user.stocks.length
         let tickerSymbol = action.data.ticker
@@ -54,17 +29,34 @@ function reducer(prevState = defaultState, action){
               stock_price: action.data.price
             })
           })
+          let id;
+          if(!prevState.user.stocks[0]){
+           id = 5000
+          }else{
+           id = prevState.user.stocks[prevState.user.stocks.length-1].id + 1
+          }
+
           return {...prevState,
             user: {
               ...prevState.user,
               money: leftOverMoney,
               stocks: [
                 ...prevState.user.stocks,
-                {long: {name:action.data.ticker}}
+
+                  {
+                    name:action.data.ticker,
+                    id: id
+                  }
+
               ],
               userstocks:[
                 ...prevState.user.userstocks,
-                { [tickerSymbol]: {amount:action.data.qty} }
+                {
+                    amount:action.data.qty,
+                    stock_id: id,
+                    money: action.data.price
+
+                }
               ]
             },
             tickerPrice:{
@@ -94,12 +86,12 @@ function reducer(prevState = defaultState, action){
               stocks: [
                 ...prevState.user.stocks,
                 {
-                  long: {name:action.data.ticker}
+                  name:action.data.ticker
                 }
               ],
               userstocks:[
                 ...prevState.user.userstocks,
-                {[tickerSymbol]: {amount:action.data.qty}}
+                { amount:action.data.qty}
               ]
             },
             tickerPrice:{

@@ -1,0 +1,2 @@
+web: cd stock-exchange-front-end && PORT=3000 npm start
+api: cd stock-exchange-back-end && PORT=4000 && bundle exec rails s
