@@ -26593,3 +26593,19 @@ Unpermitted parameter: :userstock
 Completed 204 No Content in 33ms (ActiveRecord: 14.3ms)
 
 
+Started GET "/api/v1/profile" for 127.0.0.1 at 2020-02-18 01:57:23 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:30
+[active_model_serializers]   [1m[36mUserstock Load (1.0ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (141.04ms)
+Completed 202 Accepted in 224ms (Views: 142.4ms | ActiveRecord: 16.4ms)
+
+

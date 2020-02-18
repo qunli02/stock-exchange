@@ -10,7 +10,6 @@ import Navbar from "./navbar.js";
 
 class App extends React.Component {
 
-  // #key: PGCTGCH5CPIW97F9
   componentDidMount(){
     const token = localStorage.token
     if(token){
