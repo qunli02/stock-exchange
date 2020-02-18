@@ -11,7 +11,7 @@
   - `cd` in to the file
   - run `foreman start -f Procfile.dev`
 
-##Stock exchange app to keep track of the stocks you buy
+## Stock exchange app to keep track of the stocks you buy
   - User can create account
   - User can sign in and log out
   - User will be kept logged in if User already signed in before
