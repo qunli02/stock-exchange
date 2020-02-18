@@ -7,5 +7,9 @@
     "build": "cd stock-exchange-front-end && npm install && npm run build && cd ..",
     "deploy": "cp -a stock-exchange-front-end/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "engines": {
+    "npm": "6.9.0",
+    "node": "8.11.2"
   }
 }

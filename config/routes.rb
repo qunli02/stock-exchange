@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       resources :stocks, only: [:index, :update]
       resources :userstocks, only: [:index, :create, :update]
+
+      get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+        !request.xhr? && request.format.html?
+      end
+
     end
   end
 end

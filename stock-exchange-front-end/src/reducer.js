@@ -15,7 +15,7 @@ function reducer(prevState = defaultState, action){
         let tickerSymbol = action.data.ticker
         action.data.ticker = null
         if(!prevState.tickerPrice[tickerSymbol]){
-          fetch('http://localhost:4000/api/v1/userstocks', {
+          fetch(`/api/v1/userstocks`, {
             method: 'POST',
             headers: {
               "Authorization": localStorage.token,
@@ -65,7 +65,7 @@ function reducer(prevState = defaultState, action){
             }
           }
         }else{
-          fetch('http://localhost:4000/api/v1/userstocks/', {
+          fetch(`/api/v1/userstocks/`, {
             method: 'POST',
             headers: {
               "Authorization": localStorage.token,

@@ -9,7 +9,7 @@ class Login extends React.Component {
   handlelogin = (e) => {
     let email = e.target[0].value
     let password = e.target[1].value
-    fetch(`http://localhost:4000/api/v1/login`, {
+    fetch(`/api/v1/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

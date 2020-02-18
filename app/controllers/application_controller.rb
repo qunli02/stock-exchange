@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::API
   before_action :authorized
 
+  def fallback_index_html
+    render :file => 'public/index.html'
+  end
+
   def encode_token(payload)
     # should store secret in env variable
     JWT.encode(payload, 'my_s3cr3t')
