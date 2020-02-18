@@ -35,7 +35,6 @@ function reducer(prevState = defaultState, action){
           }else{
            id = prevState.user.stocks[prevState.user.stocks.length-1].id + 1
           }
-
           return {...prevState,
             user: {
               ...prevState.user,
@@ -44,7 +43,7 @@ function reducer(prevState = defaultState, action){
                 ...prevState.user.stocks,
 
                   {
-                    name:action.data.ticker,
+                    name:tickerSymbol,
                     id: id
                   }
 
@@ -86,7 +85,7 @@ function reducer(prevState = defaultState, action){
               stocks: [
                 ...prevState.user.stocks,
                 {
-                  name:action.data.ticker
+                  name:tickerSymbol
                 }
               ],
               userstocks:[

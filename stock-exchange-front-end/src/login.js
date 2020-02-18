@@ -52,7 +52,7 @@ class Login extends React.Component {
             <br/>
             <label className="center" >
               password:
-              <input type="text" name="password"/>
+              <input type="password" name="password"/>
             </label>
             <br/>
             <input className="center" type="submit" value="Sign in" />

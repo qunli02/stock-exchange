@@ -91,6 +91,7 @@ class Portfolio extends React.Component {
 
   render(){
 
+    console.log(this.props);
     const { tickerPrice, user, handlebuy } = this.props
     const { uniqueStockIds, stocksShown } = this.state
 

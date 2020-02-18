@@ -26385,3 +26385,211 @@ Filter chain halted as :authorized rendered or redirected
 Completed 401 Unauthorized in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/api/v1/profile" for 127.0.0.1 at 2020-02-17 23:12:20 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#profile as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 23:49:32 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"email"=>"asd@asd", "password"=>"[FILTERED]", "auth"=>{"email"=>"asd@asd", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :auth
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asd@asd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+Unpermitted parameter: :auth
+[active_model_serializers]   [1m[36mUserstock Load (1.1ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:8
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (131.41ms)
+Completed 202 Accepted in 492ms (Views: 121.4ms | ActiveRecord: 21.3ms)
+
+
+Started POST "/api/v1/userstocks" for 127.0.0.1 at 2020-02-17 23:49:40 -0500
+Processing by Api::V1::UserstocksController#create as JSON
+  Parameters: {"ticker"=>"fb", "money"=>1613.9, "qty"=>1, "stock_price"=>214.19, "userstock"=>{"money"=>1613.9}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."name" = $1 LIMIT $2[0m  [["name", "fb"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mStock Load (40.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUserstock Create (5.2ms)[0m  [1m[32mINSERT INTO "userstocks" ("stock_id", "user_id", "amount", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["stock_id", 13], ["user_id", 1], ["amount", 1], ["money", 214.19], ["created_at", "2020-02-18 04:49:40.104028"], ["updated_at", "2020-02-18 04:49:40.104028"]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "asd@asd"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "money" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["money", 1613.9], ["updated_at", "2020-02-18 04:49:40.137610"], ["id", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+Completed 204 No Content in 92ms (ActiveRecord: 70.0ms)
+
+
+Started POST "/api/v1/userstocks/" for 127.0.0.1 at 2020-02-17 23:51:08 -0500
+Processing by Api::V1::UserstocksController#create as JSON
+  Parameters: {"ticker"=>"aa", "money"=>1598.23, "qty"=>1, "stock_price"=>15.67, "userstock"=>{"money"=>1598.23}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."name" = $1 LIMIT $2[0m  [["name", "aa"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUserstock Create (0.7ms)[0m  [1m[32mINSERT INTO "userstocks" ("stock_id", "user_id", "amount", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["stock_id", 11], ["user_id", 1], ["amount", 1], ["money", 15.67], ["created_at", "2020-02-18 04:51:08.515203"], ["updated_at", "2020-02-18 04:51:08.515203"]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[35m (109.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "asd@asd"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Update (3.4ms)[0m  [1m[33mUPDATE "users" SET "money" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["money", 1598.23], ["updated_at", "2020-02-18 04:51:08.633573"], ["id", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+Completed 204 No Content in 136ms (ActiveRecord: 118.3ms)
+
+
+Started GET "/api/v1/profile" for 127.0.0.1 at 2020-02-17 23:51:18 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+[active_model_serializers]   [1m[36mUserstock Load (0.5ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.02ms)
+Completed 202 Accepted in 15ms (Views: 8.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/userstocks" for 127.0.0.1 at 2020-02-17 23:52:27 -0500
+Processing by Api::V1::UserstocksController#create as JSON
+  Parameters: {"ticker"=>"ge", "money"=>1585.4, "qty"=>1, "stock_price"=>12.83, "userstock"=>{"money"=>1585.4}}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."name" = $1 LIMIT $2[0m  [["name", "ge"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:16
+  [1m[36mStock Create (44.2ms)[0m  [1m[32mINSERT INTO "stocks" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ge"], ["created_at", "2020-02-18 04:52:27.703217"], ["updated_at", "2020-02-18 04:52:27.703217"]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:16
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUserstock Create (3.7ms)[0m  [1m[32mINSERT INTO "userstocks" ("stock_id", "user_id", "amount", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["stock_id", 16], ["user_id", 1], ["amount", 1], ["money", 12.83], ["created_at", "2020-02-18 04:52:27.764279"], ["updated_at", "2020-02-18 04:52:27.764279"]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "asd@asd"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "money" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["money", 1585.4], ["updated_at", "2020-02-18 04:52:27.777517"], ["id", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+Completed 204 No Content in 96ms (ActiveRecord: 64.6ms)
+
+
+Started GET "/api/v1/profile" for 127.0.0.1 at 2020-02-17 23:54:40 -0500
+Processing by Api::V1::UsersController#profile as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+[active_model_serializers]   [1m[36mUserstock Load (0.9ms)[0m  [1m[34mSELECT "userstocks".* FROM "userstocks" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" INNER JOIN "userstocks" ON "stocks"."id" = "userstocks"."stock_id" WHERE "userstocks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.97ms)
+Completed 202 Accepted in 17ms (Views: 8.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/v1/userstocks" for 127.0.0.1 at 2020-02-17 23:54:57 -0500
+Processing by Api::V1::UserstocksController#create as JSON
+  Parameters: {"ticker"=>"twtr", "money"=>1548.5, "qty"=>1, "stock_price"=>36.9, "userstock"=>{"money"=>1548.5}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+Unpermitted parameter: :userstock
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."name" = $1 LIMIT $2[0m  [["name", "twtr"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:16
+  [1m[36mStock Create (1.4ms)[0m  [1m[32mINSERT INTO "stocks" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "twtr"], ["created_at", "2020-02-18 04:54:57.022168"], ["updated_at", "2020-02-18 04:54:57.022168"]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:16
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mStock Load (2.0ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUserstock Create (0.8ms)[0m  [1m[32mINSERT INTO "userstocks" ("stock_id", "user_id", "amount", "money", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["stock_id", 17], ["user_id", 1], ["amount", 1], ["money", 36.9], ["created_at", "2020-02-18 04:54:57.035936"], ["updated_at", "2020-02-18 04:54:57.035936"]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "asd@asd"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "money" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["money", 1548.5], ["updated_at", "2020-02-18 04:54:57.044480"], ["id", 1]]
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/userstocks_controller.rb:19
+Completed 204 No Content in 33ms (ActiveRecord: 14.3ms)
+
+
