@@ -35,6 +35,7 @@ class App extends React.Component {
             <Route exact path="/register" render={()=><Register/>} />
             <Route exact path="/portfolio" render={()=><Portfolio/>} />
             <Route exact path="/transactions" render={()=><Transactions/>} />
+            <Redirect from='*' to='/login' />
           </Switch>
       </div>
     );
