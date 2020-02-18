@@ -1,3 +1,3 @@
 stock-exchange-front-end/node_modules
-stock-exchange-back-end/tmp/*
+tmp/*
 /public
