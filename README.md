@@ -13,6 +13,7 @@
 
 ## Stock exchange app to keep track of the stocks you buy
   - User can create account
+  - User's informations are secure
   - User can sign in and log out
   - User will be kept logged in if User already signed in before
   - User can buy stocks by ticker
