@@ -106,6 +106,7 @@ class Portfolio extends React.Component {
                   handlebuy(e.target[0].value, parseInt(e.target[1].value), this.addStock)
               }}>
               <button>
+                sell
               </button>
                 <label>
                   Ticker:
