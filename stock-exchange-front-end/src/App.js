@@ -10,11 +10,10 @@ import Navbar from "./navbar.js";
 
 class App extends React.Component {
 
-  // #key: PGCTGCH5CPIW97F9
   componentDidMount(){
     const token = localStorage.token
     if(token){
-      fetch("http://localhost:4000/api/v1/profile",{
+      fetch(`/api/v1/profile`,{
         headers: {
           "Authorization": token
         }
@@ -35,6 +34,7 @@ class App extends React.Component {
             <Route exact path="/register" render={()=><Register/>} />
             <Route exact path="/portfolio" render={()=><Portfolio/>} />
             <Route exact path="/transactions" render={()=><Transactions/>} />
+            <Redirect from='*' to='/login'/>
           </Switch>
       </div>
     );

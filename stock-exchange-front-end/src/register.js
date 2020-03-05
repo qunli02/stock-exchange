@@ -11,7 +11,7 @@ class Register extends React.Component {
     let email = e.target[1].value
     let password = e.target[2].value
 
-    fetch('http://localhost:4000/api/v1/users', {
+    fetch(`/api/v1/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
